@@ -1,5 +1,7 @@
 # ☢️ Toxic Shield: AI-Powered Comment Guardian
 
+🚀 **Live Demo:** [https://toxic-comment-analyzer-tau.vercel.app](https://toxic-comment-analyzer-tau.vercel.app)
+
 Toxic Shield is a high-performance, full-stack Deep Learning application designed to detect and categorize toxicity in both text and images. Built with a sleek, neon-themed interface and powered by state-of-the-art NLP models, it provides real-time analysis to keep online communities safe.
 
 ---
