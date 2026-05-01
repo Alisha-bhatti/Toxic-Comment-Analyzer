@@ -65,13 +65,3 @@ Toxic Shield is a high-performance, full-stack Deep Learning application designe
 4. **Attribution**: The system identifies which words contributed most to the score.
 5. **Storage**: Results are logged in the database for history tracking.
 6. **Visualization**: The React frontend displays the results with dynamic charts and highlighted text.
-
----
-
-## 🛡️ License
-Distributed under the MIT License. See `LICENSE` for more information.
-
----
-
-## 📞 Contact
-Project Link: [https://github.com/YOUR_USERNAME/dl-project](https://github.com/YOUR_USERNAME/dl-project)
