@@ -1,19 +1,20 @@
-# ☢️ Toxic Shield: AI-Powered Comment Guardian
+# ☢️ ToxicScan: AI-Powered Comment Guardian
 
-🚀 **Live Demo:** [https://toxic-comment-analyzer-tau.vercel.app](https://toxic-comment-analyzer-tau.vercel.app)
+🚀 **Live Demo:** [https://toxic-comment-analyzer-1wr9.onrender.com](https://toxic-comment-analyzer-1wr9.onrender.com)
 
-Toxic Shield is a high-performance, full-stack Deep Learning application designed to detect and categorize toxicity in both text and images. Built with a sleek, neon-themed interface and powered by state-of-the-art NLP models, it provides real-time analysis to keep online communities safe.
+ToxicScan is a high-performance, full-stack AI Laboratory application designed to detect and categorize toxicity in both text and images. Built with a sophisticated light-themed interface and powered by state-of-the-art NLP models via the Hugging Face Inference API, it provides real-time analysis with lightning-fast response times.
 
 ---
 
 ## 🚀 Features
 
-- **Text Analysis**: Real-time toxicity detection using `Toxic-BERT`.
+- **Text Analysis**: Real-time toxicity detection using `Toxic-BERT` via high-speed API.
 - **Image OCR**: Extracts text from images using `EasyOCR` for cross-media analysis.
 - **Detailed Categorization**: Detects levels of *Toxicity, Severe Toxicity, Obscenity, Threats, Insults,* and *Identity Hate*.
-- **Word Attribution**: Highlights specific tokens in the text that triggered the detector.
+- **Word Attribution**: Highlights specific tokens in the text that triggered the detector with wavy animations.
 - **Analysis History**: Persistently tracks previous scans using an integrated SQLite database.
-- **Cyberpunk UI**: A modern, responsive React interface with fluid animations using Framer Motion.
+- **AI-Lab UI**: A professional, premium light-themed interface with fluid animations using Framer Motion.
+- **Floating Toxic Visuals**: Dynamic floating "toxic" elements that react to the user's presence.
 
 ---
 
@@ -21,17 +22,17 @@ Toxic Shield is a high-performance, full-stack Deep Learning application designe
 
 ### **Frontend**
 - **Framework**: React 18 (Vite)
-- **Styling**: Tailwind CSS (Dark Mode/Neon)
+- **Styling**: Tailwind CSS (Premium Light Theme)
 - **Animations**: Framer Motion
 - **Data Visualization**: Recharts (for toxicity scoring)
 
 ### **Backend**
 - **API Framework**: FastAPI (Asynchronous Python)
-- **DL Models**:
-  - `unitary/toxic-bert` (Transformer model for NLP)
-  - `EasyOCR` (Computer Vision for text extraction)
+- **AI Engine**: 
+  - `Hugging Face Inference API` (For fast `Toxic-BERT` text analysis)
+  - `EasyOCR` (Computer Vision for text extraction from images)
 - **Database**: SQLite with SQLAlchemy ORM
-- **Containerization**: Docker & Docker Compose
+- **Containerization**: Docker & Docker Compose (with Hot Module Replacement)
 
 ---
 
@@ -39,19 +40,23 @@ Toxic Shield is a high-performance, full-stack Deep Learning application designe
 
 ### **Prerequisites**
 - Docker Desktop installed and running.
-- Git installed.
+- Hugging Face API Key (Free)
 
-### **Run with Docker (Fastest)**
+### **Run with Docker (Live Dev Mode)**
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/dl-project.git
-   cd dl-project
+   git clone https://github.com/Alisha-bhatti/Toxic-Comment-Analyzer.git
+   cd Toxic-Comment-Analyzer
    ```
-2. Build and launch:
+2. Set your Hugging Face API Key:
+   ```bash
+   $env:HF_API_KEY="your_token_here"
+   ```
+3. Build and launch:
    ```bash
    docker-compose up --build
    ```
-3. Access the application:
+4. Access the application:
    - **Frontend**: [http://localhost:3000](http://localhost:3000)
    - **Backend API**: [http://localhost:8000/docs](http://localhost:8000/docs)
 
@@ -61,7 +66,7 @@ Toxic Shield is a high-performance, full-stack Deep Learning application designe
 
 1. **Input**: Users provide a text snippet or upload an image containing text.
 2. **Preprocessing**: The backend cleans the input and extracts text from images if necessary.
-3. **Inference**: The `Toxic-BERT` model calculates a probability score (0 to 1) for various toxicity categories.
+3. **Inference**: The system calls the `Toxic-BERT` model via Hugging Face for instant probability scoring.
 4. **Attribution**: The system identifies which words contributed most to the score.
 5. **Storage**: Results are logged in the database for history tracking.
-6. **Visualization**: The React frontend displays the results with dynamic charts and highlighted text.
+6. **Visualization**: The React frontend displays the results with dynamic charts and highlighted text animations.
