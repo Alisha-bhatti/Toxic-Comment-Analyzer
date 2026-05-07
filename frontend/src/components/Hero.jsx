@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
-  const title = "Toxic Detector";
+  const title = "ToxicScan";
   
   const container = {
     hidden: { opacity: 0 },
@@ -29,31 +29,31 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative pt-20 pb-10 flex flex-col items-center justify-center text-center px-4 overflow-hidden">
-      {/* Morphing Blob */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-success/20 animate-blob mix-blend-multiply filter blur-3xl opacity-30 rounded-full" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-primary/20 animate-blob animation-delay-2000 mix-blend-multiply filter blur-3xl opacity-30 rounded-full" />
+    <div className="relative pt-24 pb-16 flex flex-col items-center justify-center text-center px-4 overflow-hidden">
+      {/* Morphing Tech Blobs */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/20 animate-blob mix-blend-multiply filter blur-3xl opacity-30 rounded-full" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-success/20 animate-blob animation-delay-2000 mix-blend-multiply filter blur-3xl opacity-30 rounded-full" />
 
-      {/* Floating Emojis */}
-      {[ "☢️", "⚠️", "🧪", "🦠", "💀" ].map((emoji, index) => (
+      {/* Floating Toxic Images (Emojis) */}
+      {[ "☢️", "⚠️", "🧪", "🦠", "💀", "🍄", "☣️" ].map((emoji, index) => (
         <motion.div
           key={index}
           initial={{ y: 0, opacity: 0 }}
           animate={{ 
-            y: [-20, -100], 
+            y: [-20, -120], 
             opacity: [0, 1, 0],
-            x: Math.sin(index) * 100 
+            x: Math.sin(index) * 150 
           }}
           transition={{
             duration: 5 + index,
             repeat: Infinity,
-            delay: index * 2,
-            ease: "linear"
+            delay: index * 1.5,
+            ease: "easeInOut"
           }}
-          className="absolute text-4xl pointer-events-none"
+          className="absolute text-5xl pointer-events-none filter drop-shadow-2xl"
           style={{ 
-            left: `${15 + index * 15}%`, 
-            bottom: '0%' 
+            left: `${10 + index * 15}%`, 
+            bottom: '10%' 
           }}
         >
           {emoji}

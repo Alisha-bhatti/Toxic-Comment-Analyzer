@@ -72,7 +72,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen relative selection:bg-primary selection:text-white">
+    <div className="min-h-screen relative selection:bg-primary selection:text-white text-slate-300">
       <Toaster position="top-right" reverseOrder={false} />
       <BackgroundEffects />
       
@@ -89,8 +89,8 @@ function App() {
         {result && <ResultsDisplay result={result} />}
       </main>
 
-      <footer className="text-center py-10 text-slate-400 font-bold border-t border-slate-100/50 bg-white/20 backdrop-blur-md">
-        <p>© 2026 Toxic Shield AI Laboratory. Playful-Scientific Experiment.</p>
+      <footer className="text-center py-10 text-slate-500 font-bold border-t border-white/5 bg-white/[0.02] backdrop-blur-md">
+        <p>© 2026 ToxicScan AI Laboratory. Advanced Content Moderation Intelligence.</p>
       </footer>
     </div>
   );

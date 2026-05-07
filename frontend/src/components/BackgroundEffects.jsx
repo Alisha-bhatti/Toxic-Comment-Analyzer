@@ -3,54 +3,47 @@ import { motion } from 'framer-motion';
 
 const BackgroundEffects = () => {
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden bg-background">
+    <div className="fixed inset-0 -z-10 overflow-hidden bg-[#FAFAF7]">
       {/* Mesh Gradient Overlay */}
-      <div className="absolute inset-0 opacity-40 mesh-gradient animate-hue-shift" />
+      <div className="absolute inset-0 opacity-30 mesh-gradient animate-hue-shift" />
       
       {/* Dot Grid */}
       <div className="absolute inset-0 dot-grid opacity-20" />
 
-      {/* Floating Orbs */}
-      <motion.div
-        animate={{
-          x: [0, 100, -50],
-          y: [0, -100, 50],
-          scale: [1, 1.2, 1],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "linear"
-        }}
-        className="absolute -top-20 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-[100px]"
-      />
-      
-      <motion.div
-        animate={{
-          x: [0, -150, 100],
-          y: [0, 50, -100],
-          scale: [1, 1.1, 1],
-        }}
-        transition={{
-          duration: 25,
-          repeat: Infinity,
-          ease: "linear"
-        }}
-        className="absolute top-1/2 -right-20 w-[500px] h-[500px] bg-success/10 rounded-full blur-[120px]"
+      {/* Scanning Laser Line */}
+      <motion.div 
+        animate={{ top: ['-10%', '110%'] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+        className="absolute left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-primary/20 to-transparent z-10"
       />
 
-      <motion.div
-        animate={{
-          x: [0, 80, -20],
-          y: [0, 120, -50],
-        }}
-        transition={{
-          duration: 18,
-          repeat: Infinity,
-          ease: "linear"
-        }}
-        className="absolute -bottom-40 left-1/3 w-[600px] h-[600px] bg-warning/5 rounded-full blur-[150px]"
-      />
+      {/* Digital Particles */}
+      {[...Array(25)].map((_, i) => (
+        <motion.div
+          key={i}
+          initial={{ 
+            opacity: 0,
+            x: Math.random() * 100 + "%",
+            y: Math.random() * 100 + "%",
+            scale: Math.random() * 0.5 + 0.5
+          }}
+          animate={{
+            y: ["0%", "100%"],
+            opacity: [0, 0.4, 0],
+          }}
+          transition={{
+            duration: Math.random() * 10 + 15,
+            repeat: Infinity,
+            delay: Math.random() * 5,
+            ease: "linear"
+          }}
+          className="absolute w-1.5 h-1.5 bg-primary/20 rounded-full blur-[1px]"
+        />
+      ))}
+
+      {/* Floating Orbs */}
+      <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary/5 rounded-full blur-[100px]" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-success/5 rounded-full blur-[100px]" />
     </div>
   );
 };

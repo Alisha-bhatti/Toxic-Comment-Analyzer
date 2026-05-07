@@ -80,7 +80,7 @@ const InputPanel = ({ onAnalyze }) => {
                 value={text}
                 onChange={(e) => setText(e.target.value)}
                 placeholder="Paste the comment you want to analyze..."
-                className="flex-1 bg-transparent border-none outline-none text-xl resize-none min-h-[200px] placeholder:text-slate-300 font-medium"
+                className="flex-1 bg-transparent border-none outline-none text-xl resize-none min-h-[200px] placeholder:text-slate-300 font-medium text-slate-900"
               />
               <div className="flex justify-between items-center mt-4">
                 <span className="text-slate-400 font-bold bg-slate-100 px-3 py-1 rounded-full text-sm">
@@ -119,7 +119,7 @@ const InputPanel = ({ onAnalyze }) => {
                 <input {...getInputProps()} />
                 {imagePreview ? (
                   <div className="relative group">
-                    <img src={imagePreview} alt="Preview" className="max-h-[300px] rounded-2xl shadow-lg" />
+                    <img src={imagePreview} alt="Preview" className="max-h-[300px] rounded-2xl shadow-lg border border-slate-100" />
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center rounded-2xl">
                         <CloudArrowUpIcon className="w-12 h-12 text-white" />
                     </div>
