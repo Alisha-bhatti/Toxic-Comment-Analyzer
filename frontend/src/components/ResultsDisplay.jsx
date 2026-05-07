@@ -39,8 +39,8 @@ const ResultsDisplay = ({ result }) => {
                 Impact Score
             </h3>
             
-            <div className="relative w-48 h-48 mb-6">
-                <ResponsiveContainer width="100%" height="100%">
+            <div className="relative w-48 h-48 mb-6 flex items-center justify-center">
+                <ResponsiveContainer width="100%" height="100%" minHeight={150}>
                     <PieChart>
                         <Pie
                             data={chartData}
