@@ -1,6 +1,6 @@
 # ☢️ ToxicScan: AI-Powered Comment Guardian
 
-🚀 **Live Demo:** [https://toxic-comment-analyzer-1wr9.onrender.com](https://toxic-comment-analyzer-1wr9.onrender.com)
+🚀 **Live Demo:** [https://toxic-comment-analyzer-tau.vercel.app](https://toxic-comment-analyzer-tau.vercel.app)
 
 ToxicScan is a high-performance, full-stack AI Laboratory application designed to detect and categorize toxicity in both text and images. Built with a sophisticated light-themed interface and powered by state-of-the-art NLP models via the Hugging Face Inference API, it provides real-time analysis with lightning-fast response times.
 
