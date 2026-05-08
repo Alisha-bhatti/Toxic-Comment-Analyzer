@@ -14,11 +14,23 @@ def get_reader():
     return reader
 
 def extract_text_from_image(image_bytes):
+    # Use PIL to load the image
     img = Image.open(io.BytesIO(image_bytes))
-    img = img.convert('L') # Grayscale
-    img = ImageEnhance.Contrast(img).enhance(2.0)
-    img = img.filter(ImageFilter.MedianFilter())
     
+    # Convert to RGB if not already
+    if img.mode != 'RGB':
+        img = img.convert('RGB')
+    
+    # We'll use the raw image for EasyOCR as it handles its own preprocessing
+    # and sometimes manual filters like MedianFilter blur the text too much.
     ocr_reader = get_reader()
-    results = ocr_reader.readtext(np.array(img), detail=0)
-    return " ".join(results)
+    
+    # Using paragraph=True helps in joining words into meaningful sentences
+    # and avoiding random fragments.
+    results = ocr_reader.readtext(np.array(img), detail=0, paragraph=True)
+    
+    # Join with space and clean up any double spaces
+    text = " ".join(results)
+    text = " ".join(text.split())
+    
+    return text

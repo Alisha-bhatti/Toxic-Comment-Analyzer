@@ -13,7 +13,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Pre-download models to make startup faster and avoid runtime downloads
-# Only EasyOCR now, BERT is handled via API
+RUN python -c "from transformers import AutoTokenizer, AutoModelForSequenceClassification; AutoTokenizer.from_pretrained('unitary/toxic-bert'); AutoModelForSequenceClassification.from_pretrained('unitary/toxic-bert')"
 RUN python -c "import easyocr; easyocr.Reader(['en'])"
 
 COPY . .

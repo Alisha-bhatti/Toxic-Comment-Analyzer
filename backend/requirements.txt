@@ -1,6 +1,6 @@
 fastapi
 uvicorn
-requests
+transformers
 torch
 easyocr
 pillow

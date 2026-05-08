@@ -2,13 +2,13 @@
 
 🚀 **Live Demo:** [https://toxic-comment-analyzer-tau.vercel.app](https://toxic-comment-analyzer-tau.vercel.app)
 
-ToxicScan is a high-performance, full-stack AI Laboratory application designed to detect and categorize toxicity in both text and images. Built with a sophisticated light-themed interface and powered by state-of-the-art NLP models via the Hugging Face Inference API, it provides real-time analysis with lightning-fast response times.
+ToxicScan is a high-performance, full-stack AI Laboratory application designed to detect and categorize toxicity in both text and images. Built with a sophisticated light-themed interface and powered by state-of-the-art local NLP models, it provides real-time, high-accuracy analysis.
 
 ---
 
 ## 🚀 Features
 
-- **Text Analysis**: Real-time toxicity detection using `Toxic-BERT` via high-speed API.
+- **Text Analysis**: Real-time toxicity detection using a local `Toxic-BERT` model.
 - **Image OCR**: Extracts text from images using `EasyOCR` for cross-media analysis.
 - **Detailed Categorization**: Detects levels of *Toxicity, Severe Toxicity, Obscenity, Threats, Insults,* and *Identity Hate*.
 - **Word Attribution**: Highlights specific tokens in the text that triggered the detector with wavy animations.
@@ -29,7 +29,7 @@ ToxicScan is a high-performance, full-stack AI Laboratory application designed t
 ### **Backend**
 - **API Framework**: FastAPI (Asynchronous Python)
 - **AI Engine**: 
-  - `Hugging Face Inference API` (For fast `Toxic-BERT` text analysis)
+  - `Toxic-BERT` (Local Transformer model for high-accuracy NLP)
   - `EasyOCR` (Computer Vision for text extraction from images)
 - **Database**: SQLite with SQLAlchemy ORM
 - **Containerization**: Docker & Docker Compose (with Hot Module Replacement)
@@ -40,7 +40,7 @@ ToxicScan is a high-performance, full-stack AI Laboratory application designed t
 
 ### **Prerequisites**
 - Docker Desktop installed and running.
-- Hugging Face API Key (Free)
+- Git installed.
 
 ### **Run with Docker (Live Dev Mode)**
 1. Clone the repository:
@@ -48,15 +48,11 @@ ToxicScan is a high-performance, full-stack AI Laboratory application designed t
    git clone https://github.com/Alisha-bhatti/Toxic-Comment-Analyzer.git
    cd Toxic-Comment-Analyzer
    ```
-2. Set your Hugging Face API Key:
-   ```bash
-   $env:HF_API_KEY="your_token_here"
-   ```
-3. Build and launch:
+2. Build and launch:
    ```bash
    docker-compose up --build
    ```
-4. Access the application:
+3. Access the application:
    - **Frontend**: [http://localhost:3000](http://localhost:3000)
    - **Backend API**: [http://localhost:8000/docs](http://localhost:8000/docs)
 
@@ -66,7 +62,7 @@ ToxicScan is a high-performance, full-stack AI Laboratory application designed t
 
 1. **Input**: Users provide a text snippet or upload an image containing text.
 2. **Preprocessing**: The backend cleans the input and extracts text from images if necessary.
-3. **Inference**: The system calls the `Toxic-BERT` model via Hugging Face for instant probability scoring.
+3. **Inference**: The local `Toxic-BERT` model calculates a probability score (0 to 1) for various toxicity categories.
 4. **Attribution**: The system identifies which words contributed most to the score.
 5. **Storage**: Results are logged in the database for history tracking.
 6. **Visualization**: The React frontend displays the results with dynamic charts and highlighted text animations.

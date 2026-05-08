@@ -1,6 +1,3 @@
-from dotenv import load_dotenv
-load_dotenv()  # Load .env before any other module reads env vars
-
 from fastapi import FastAPI, UploadFile, File, Depends, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
